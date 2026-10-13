@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#f5f6f2" />
+<title>拾集 · 个人资源收藏站</title>
+<style>
+:root{--bg:#f5f6f2;--paper:#fff;--ink:#202620;--muted:#737c73;--line:#e5e9e1;--green:#287653;--green-dark:#1d6042;--green-soft:#e7f3ea;--lime:#d6f06b;--shadow:0 12px 34px rgba(39,63,43,.07);--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit}.wrap{max-width:1180px;margin:0 auto;padding:0 28px}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(222,228,218,.8)}.brand{display:flex;align-items:center;gap:11px;text-decoration:none}.brand-mark{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;background:var(--green);color:white;box-shadow:0 5px 12px #28765325}.brand-mark svg{width:23px;height:23px}.brand-name{font-size:19px;font-weight:800;letter-spacing:-.6px}.brand-sub{font-size:11px;color:var(--muted);margin-top:2px}.top-right{display:flex;align-items:center;gap:14px}.local-pill{display:flex;gap:7px;align-items:center;padding:8px 11px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:#697469;background:#fbfcf9}.dot{width:7px;height:7px;background:#50a36f;border-radius:50%;box-shadow:0 0 0 3px #50a36f19}.btn{border:0;border-radius:12px;padding:11px 16px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,background .15s}.btn:active{transform:scale(.98)}.btn-primary{background:var(--green);color:#fff;box-shadow:0 6px 14px #28765320}.btn-primary:hover{background:var(--green-dark)}.btn svg{width:17px;height:17px}.hero{padding:48px 0 27px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px}.eyebrow{color:var(--green);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:15px;display:flex;align-items:center;gap:8px}.eyebrow:before{content:"";width:22px;height:2px;background:var(--green);border-radius:8px}.hero h1{font-size:clamp(32px,4vw,47px);letter-spacing:-1.8px;line-height:1.14;margin:0 0 13px;font-weight:850}.hero p{font-size:15px;line-height:1.8;color:var(--muted);margin:0;max-width:540px}.hero-side{display:flex;gap:12px;flex-shrink:0}.stat{min-width:100px;padding:16px 19px;border:1px solid var(--line);border-radius:17px;background:#ffffffa6}.stat strong{display:block;font-size:25px;letter-spacing:-1px}.stat span{font-size:12px;color:var(--muted);margin-top:3px;display:block}.panel{border:1px solid var(--line);border-radius:24px;background:#ffffffa6;padding:18px;margin-top:9px}.toolbar-top{display:flex;gap:12px;align-items:center}.search{position:relative;flex:1}.search svg{position:absolute;width:18px;height:18px;left:15px;top:50%;transform:translateY(-50%);color:#8a948a}.search input{height:46px;width:100%;border:1px solid var(--line);border-radius:13px;background:#fff;padding:0 14px 0 43px;outline:none;color:var(--ink);font-size:14px}.search input:focus,.field input:focus,.field textarea:focus{border-color:#82b79a;box-shadow:0 0 0 3px #28765312}.sort-select{height:46px;padding:0 30px 0 13px;border:1px solid var(--line);border-radius:13px;background:#fff;color:#5c665d;outline:none;font-size:13px}.collection-select{height:46px;max-width:175px;padding:0 28px 0 12px;border:1px solid var(--line);border-radius:13px;background:#fff;color:#5c665d;outline:none;font-size:13px}.collection-pill{display:inline-flex;align-items:center;gap:5px;background:#edf5e9;color:#42704c;border:1px solid #dcebd8;border-radius:8px;padding:5px 8px;font-size:10px;font-weight:800;margin:0 0 10px;max-width:100%;overflow-wrap:anywhere}.collection-action{margin-top:10px;border:1px solid #dfe8dc;border-radius:9px;background:#f8fbf6;color:#527457;font-size:11px;font-weight:800;padding:7px 10px}.collection-action:hover{background:#edf5e9}.tabs{display:flex;align-items:center;gap:7px;overflow:auto;margin-top:16px;padding-bottom:1px}.tab{border:0;background:transparent;color:#737d73;border-radius:10px;padding:9px 13px;font-size:13px;font-weight:700;white-space:nowrap}.tab:hover{background:#f1f4ee}.tab.active{background:var(--green-soft);color:var(--green)}.tab-count{font-weight:600;opacity:.65;margin-left:5px}.result-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:27px 2px 15px}.result-title{font-size:14px;font-weight:800}.result-note{font-size:12px;color:var(--muted);margin-top:4px}.view-toggle{display:flex;gap:4px;padding:4px;border-radius:11px;border:1px solid var(--line);background:#fff}.view-toggle button{border:0;background:transparent;width:32px;height:30px;display:grid;place-items:center;border-radius:8px;color:#879087}.view-toggle button.active{background:#edf4ed;color:var(--green)}.view-toggle svg{width:16px;height:16px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-bottom:45px}.grid.list-view{grid-template-columns:1fr;gap:10px}.card{position:relative;min-width:0;border:1px solid var(--line);border-radius:19px;background:var(--paper);overflow:hidden;transition:transform .17s,box-shadow .17s,border-color .17s;box-shadow:0 2px 4px #23372003}.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#d7e0d4}.preview{height:168px;position:relative;overflow:hidden;background:#f1f4ef;display:flex;align-items:center;justify-content:center}.preview img{height:100%;width:100%;object-fit:cover;cursor:zoom-in;transition:transform .35s}.card:hover .preview img{transform:scale(1.025)}.preview-placeholder{width:100%;height:100%;display:grid;place-items:center;position:relative;background:linear-gradient(135deg,#f0f4ed,#e8efe6)}.preview-placeholder:before,.preview-placeholder:after{content:"";position:absolute;border-radius:50%;border:1px solid #cadac9;opacity:.7}.preview-placeholder:before{width:140px;height:140px;right:-32px;top:-47px}.preview-placeholder:after{width:86px;height:86px;left:-20px;bottom:-38px}.file-symbol{width:54px;height:64px;border-radius:10px;background:white;border:1px solid #dce5d9;display:grid;place-items:center;color:var(--green);box-shadow:0 8px 18px #2a5a3510;z-index:1}.file-symbol svg{width:27px;height:27px}.preview-badge{position:absolute;top:12px;left:12px;border:1px solid #ffffffb5;background:#ffffffdf;backdrop-filter:blur(8px);padding:6px 9px;border-radius:9px;font-size:10px;font-weight:800;color:#5b695c;letter-spacing:.5px}.card-menu{position:absolute;right:11px;top:10px;z-index:2}.icon-btn{width:33px;height:33px;border:1px solid #e3e7e0;background:#ffffffed;backdrop-filter:blur(8px);border-radius:10px;color:#687269;display:grid;place-items:center}.icon-btn svg{width:16px;height:16px}.card-body{padding:15px 16px 16px}.type-line{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}.type-tag{display:inline-flex;align-items:center;gap:5px;color:var(--green);font-size:11px;font-weight:800}.type-tag svg{width:13px;height:13px}.date{font-size:11px;color:#9aa299}.card-title{font-size:15px;font-weight:800;line-height:1.45;word-break:break-word;margin:0 0 7px;letter-spacing:-.2px}.card-desc{font-size:12px;color:#778177;line-height:1.65;margin:0 0 13px;word-break:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:0}.card-desc:empty{display:none}.url-line{display:flex;align-items:center;gap:7px;min-width:0;padding-top:11px;border-top:1px solid #eff1ec;color:#899289;font-size:11px}.favicon{width:18px;height:18px;border:1px solid #ebeee8;border-radius:6px;background:#f7f9f5;display:grid;place-items:center;flex-shrink:0;font-size:10px;font-weight:800;color:var(--green)}.url-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}.open-link{font-size:11px;font-weight:800;color:var(--green);text-decoration:none;white-space:nowrap}.open-link:hover{text-decoration:underline}.file-meta{font-size:11px;color:#8b958b;display:flex;align-items:center;gap:6px;min-width:0}.file-meta svg{width:14px;height:14px;flex-shrink:0}.download-link svg{width:13px;height:13px;vertical-align:middle;flex-shrink:0}.file-meta span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.download-link{font-size:11px;color:var(--green);font-weight:800;text-decoration:none;white-space:nowrap}.grid.list-view .card{display:flex;align-items:stretch;min-height:132px}.grid.list-view .preview{width:160px;min-width:160px;height:auto;min-height:132px}.grid.list-view .card-body{flex:1;display:flex;flex-direction:column;justify-content:center}.grid.list-view .card-desc{margin-bottom:9px}.grid.list-view .card-menu{right:auto;left:117px}.empty{grid-column:1/-1;text-align:center;padding:66px 20px 78px;border:1px dashed #d8e1d5;border-radius:20px;background:#fbfcf9}.empty-icon{width:60px;height:60px;background:#edf4eb;color:var(--green);margin:0 auto 18px;border-radius:20px;display:grid;place-items:center}.empty-icon svg{width:27px;height:27px}.empty h3{margin:0 0 8px;font-size:17px}.empty p{margin:0 auto 18px;color:var(--muted);font-size:13px;line-height:1.7;max-width:330px}.footer{border-top:1px solid var(--line);padding:19px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#90998f;font-size:11px}.footer strong{color:#647164}.footer-links{display:flex;gap:15px}.footer button{background:none;border:0;color:#7a8579;padding:0;font-size:11px;text-decoration:underline;text-underline-offset:3px}.overlay{position:fixed;inset:0;background:#17271dc0;backdrop-filter:blur(5px);z-index:20;display:none;align-items:center;justify-content:center;padding:20px}.overlay.show{display:flex}.modal{width:min(520px,100%);max-height:min(90vh,800px);overflow:auto;background:#fff;border-radius:24px;box-shadow:0 24px 80px #07180f44;padding:25px}.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:20px}.modal-head h2{margin:0;font-size:22px;letter-spacing:-.6px}.modal-head p{margin:6px 0 0;color:var(--muted);font-size:13px}.close-btn{width:35px;height:35px;border:1px solid var(--line);background:#fff;border-radius:11px;color:#69746a;display:grid;place-items:center;flex-shrink:0}.close-btn svg{width:17px;height:17px}.type-select{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:5px;background:#f3f5f1;border-radius:14px;margin-bottom:21px}.type-choice{padding:11px 6px;border:1px solid transparent;background:transparent;border-radius:10px;color:#7b857a;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:7px}.type-choice svg{width:16px;height:16px}.type-choice.active{background:#fff;border-color:#e0e7de;color:var(--green);box-shadow:0 2px 5px #1b472006}.field{margin-bottom:15px}.field label{display:block;font-size:12px;font-weight:800;color:#475248;margin-bottom:7px}.field input,.field textarea{width:100%;border:1px solid #dfe5dc;border-radius:12px;background:#fff;padding:12px 13px;font-size:13px;color:var(--ink);outline:none;transition:border .15s,box-shadow .15s}.field textarea{min-height:76px;resize:vertical;line-height:1.6}.field input::placeholder,.field textarea::placeholder{color:#a2aaa0}.field .hint{font-size:11px;color:#8a9489;margin-top:7px;line-height:1.5}.dropzone{border:1.5px dashed #c9d9c9;border-radius:15px;background:#f8fbf7;padding:24px 15px;text-align:center;cursor:pointer;transition:background .15s,border-color .15s}.dropzone.dragover{background:#ecf7ed;border-color:#6ca981}.dropzone svg{width:27px;height:27px;color:var(--green);margin-bottom:7px}.dropzone strong{display:block;font-size:13px;margin-bottom:5px}.dropzone span{font-size:11px;color:#839083;line-height:1.6}.dropzone input{display:none}.selected-files{font-size:12px;color:#566557;line-height:1.7;margin-top:8px;white-space:pre-line;overflow-wrap:anywhere}.attach-zone{border:1.5px dashed #c9d9c9;border-radius:14px;background:#f8fbf7;padding:16px;text-align:center;cursor:pointer;display:block}.attach-zone strong{display:block;font-size:13px;color:#3d6148;margin-bottom:4px}.attach-zone span{font-size:11px;color:#839083;line-height:1.6}.attach-zone input{display:none}.attach-preview{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.attach-chip{border:1px solid #e1e8df;border-radius:10px;background:#f7faf6;padding:7px 9px;font-size:11px;color:#536454;max-width:100%;overflow-wrap:anywhere}.modal-actions{display:flex;align-items:center;justify-content:flex-end;gap:9px;margin-top:22px}.btn-plain{background:#f0f3ee;color:#596459}.btn-plain:hover{background:#e7ece4}.note{font-size:11px;color:#929b91;line-height:1.6;margin-top:15px}.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#1f3024;color:white;padding:12px 16px;border-radius:12px;font-size:13px;box-shadow:0 8px 24px #1a2b1b25;z-index:50;transition:all .25s;max-width:calc(100vw - 32px);text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.lightbox{position:fixed;inset:0;z-index:40;background:#101611eF;display:none;align-items:center;justify-content:center;padding:25px}.lightbox.show{display:flex}.lightbox img{max-width:min(1100px,95vw);max-height:86vh;object-fit:contain;border-radius:10px;box-shadow:0 15px 70px #0007}.lightbox .close-btn{position:absolute;top:20px;right:20px;background:#ffffff18;border-color:#ffffff38;color:white}.hidden{display:none!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{align-items:flex-start;flex-direction:column}.hero-side{width:100%}.stat{flex:1}.stat strong{font-size:22px}}
+@media(max-width:600px){.wrap{padding:0 16px}.topbar{height:68px}.brand-mark{width:36px;height:36px;border-radius:12px}.brand-name{font-size:17px}.brand-sub{font-size:10px}.local-pill{display:none}.top-right{gap:0}.top-right .btn{padding:10px 12px;font-size:12px}.hero{padding:34px 0 22px;gap:19px}.hero h1{font-size:34px;letter-spacing:-1.3px}.hero p{font-size:13px}.hero-side{gap:8px}.stat{min-width:0;padding:12px 13px;border-radius:14px}.stat strong{font-size:22px}.stat span{font-size:10px}.panel{padding:12px;border-radius:18px}.toolbar-top{gap:7px}.search input{height:43px;padding-left:37px;font-size:12px}.search svg{left:12px}.sort-select{height:43px;width:105px;padding-left:9px;font-size:11px}.collection-select{height:43px;max-width:105px;padding-left:7px;font-size:11px}.tabs{margin-top:12px;gap:2px}.tab{padding:9px 10px;font-size:12px}.result-row{padding:21px 1px 12px}.result-note{font-size:11px}.grid{gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));padding-bottom:28px}.card{border-radius:15px}.preview{height:122px}.card-body{padding:11px}.preview-badge{top:7px;left:7px;padding:5px 7px;font-size:9px}.card-menu{top:6px;right:6px}.icon-btn{width:29px;height:29px;border-radius:9px}.type-line{margin-bottom:6px}.type-tag{font-size:10px}.date{font-size:9px}.card-title{font-size:13px;margin-bottom:5px}.card-desc{font-size:11px;line-height:1.5;margin-bottom:9px}.url-line{padding-top:8px;gap:5px}.favicon{width:16px;height:16px}.url-text{font-size:10px}.open-link,.download-link{font-size:10px}.file-meta{font-size:10px}.file-symbol{width:44px;height:52px}.file-symbol svg{width:23px;height:23px}.grid.list-view .preview{width:105px;min-width:105px;min-height:125px}.grid.list-view .card-menu{left:75px}.footer{align-items:flex-start;flex-direction:column;gap:9px}.modal{padding:19px;border-radius:20px}.modal-head h2{font-size:20px}.overlay{padding:12px}.type-choice{font-size:11px;gap:5px}.type-choice svg{width:14px;height:14px}}
+@media(max-width:370px){.grid{grid-template-columns:1fr}.preview{height:170px}.sort-select{width:88px}.hero h1{font-size:31px}}
+</style>
+</head>
+<body>
+<header class="wrap topbar">
+  <a class="brand" href="#top" aria-label="拾集首页">
+    <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2A5 5 0 0 0 12 3.93l-1.15 1.15"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2A5 5 0 0 0 12 20.07l1.15-1.15"/></svg></div>
+    <div><div class="brand-name">拾集</div><div class="brand-sub">LINKS · FILES · IMAGES</div></div>
+  </a>
+  <div class="top-right"><div class="local-pill"><span class="dot"></span>仅保存在当前浏览器</div><button class="btn btn-primary" id="openAddTop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>添加资源</button></div>
+</header>
+<main class="wrap" id="top">
+  <section class="hero">
+    <div><div class="eyebrow">YOUR PERSONAL LIBRARY</div><h1>值得保存的，<br>都放在这里。</h1><p>链接、图片、文件，一个顺手的小收藏站。把散落在各处的好东西收拢起来，想找的时候，一搜就有。</p></div>
+    <div class="hero-side" aria-label="资源统计"><div class="stat"><strong id="totalCount">0</strong><span>全部资源</span></div><div class="stat"><strong id="linkCount">0</strong><span>网址链接</span></div><div class="stat"><strong id="fileCount">0</strong><span>文件与图片</span></div></div>
+  </section>
+  <section class="panel" aria-label="资源列表工具栏">
+    <div class="toolbar-top">
+      <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg><input id="searchInput" type="search" placeholder="搜索标题、网址、文件名…" autocomplete="off" aria-label="搜索资源"></div>
+      <select id="collectionFilter" class="collection-select" aria-label="按合集筛选"><option value="">所有合集</option></select><select id="sortSelect" class="sort-select" aria-label="排序方式"><option value="new">最新添加</option><option value="old">最早添加</option><option value="az">名称 A-Z</option></select>
+    </div>
+    <div class="tabs" role="tablist" aria-label="资源类型">
+      <button class="tab active" data-filter="all" role="tab" aria-selected="true">全部<span class="tab-count" id="countAll">0</span></button>
+      <button class="tab" data-filter="link" role="tab" aria-selected="false">↗ 链接<span class="tab-count" id="countLink">0</span></button>
+      <button class="tab" data-filter="image" role="tab" aria-selected="false">▧ 图片<span class="tab-count" id="countImage">0</span></button>
+      <button class="tab" data-filter="file" role="tab" aria-selected="false">▤ 文件<span class="tab-count" id="countFile">0</span></button>
+    </div>
+  </section>
+  <div class="result-row"><div><div class="result-title" id="resultTitle">所有资源</div><div class="result-note" id="resultNote">你的私人收藏空间，整洁又好找。</div></div><div class="view-toggle" aria-label="视图模式"><button class="active" id="gridMode" aria-label="网格视图" title="网格视图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button><button id="listMode" aria-label="列表视图" title="列表视图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01" stroke-width="3"/></svg></button></div></div>
+  <section class="grid" id="resourceGrid" aria-live="polite"></section>
+  <footer class="footer"><div>© <span id="year"></span> <strong>拾集</strong> · 好东西，值得被好好收藏。</div><div class="footer-links"><span>本地保存 · 不上传服务器</span><button id="helpButton">使用说明</button></div></footer>
+</main>
+
+<div class="overlay" id="addOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal">
+  <div class="modal-head"><div><h2 id="modalTitle">添加到拾集</h2><p>选择一种类型，把它收进你的资源库。</p></div><button class="close-btn" id="closeModal" aria-label="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 6-12 12M6 6l12 12"/></svg></button></div>
+  <div class="type-select" role="tablist"><button type="button" class="type-choice active" data-type="link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.07 0l2-2A5 5 0 0 0 12 3.93l-1.15 1.15"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2A5 5 0 0 0 12 20.07l1.15-1.15"/></svg>网址链接</button><button type="button" class="type-choice" data-type="image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>图片</button><button type="button" class="type-choice" data-type="file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>文件</button></div>
+  <form id="addForm">
+   <div id="linkFields">
+    <div class="field"><label for="urlInput">网址 *</label><input type="text" inputmode="url" id="urlInput" placeholder="https://example.com" autocomplete="url" autocapitalize="off" spellcheck="false"><div class="hint">输入网址即可，可带或不带 https://，保存时会自动补全。</div></div>
+    <div class="field"><label for="linkTitle">标题（选填）</label><input id="linkTitle" type="text" maxlength="120" placeholder="给这个链接起个名字"></div>
+    <div class="field"><label for="collectionInput">放进合集（选填）</label><input id="collectionInput" type="text" maxlength="60" list="collectionOptions" placeholder="例如：学习资料、设计灵感、常用工具"><datalist id="collectionOptions"></datalist><div class="hint">相同合集名称的链接会归到一起，也可以给已保存的链接添加合集。</div></div>
+    <div class="field"><label>配图或附件（选填）</label><label class="attach-zone" for="linkAttachmentInput"><strong>＋ 添加图片或文件</strong><span>可一次选择多张图片、PDF、文档等附件</span><input id="linkAttachmentInput" type="file" multiple accept="image/*,.pdf,.txt,.md,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.rar,.7z,.mp4,.mp3"></label><div class="attach-preview" id="linkAttachmentPreview" aria-live="polite"></div><div class="hint">附件会一起保存，并在备注中标记关联的网址。</div></div>
+   </div>
+   <div id="uploadFields" class="hidden">
+    <div class="field"><label id="uploadLabel">选择图片 *</label><label class="dropzone" id="dropzone" for="fileInput"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m-5 5 5-5 5 5"/><path d="M20 16.5v3A1.5 1.5 0 0 1 18.5 21h-13A1.5 1.5 0 0 1 4 19.5v-3"/></svg><strong>点击选择，或把文件拖到这里</strong><span id="uploadHint">支持常见图片格式，可一次选择多张</span><input type="file" id="fileInput" multiple accept="image/*"></label><div class="selected-files" id="selectedFiles" aria-live="polite"></div></div>
+   </div>
+   <div class="field"><label for="descriptionInput">备注（选填）</label><textarea id="descriptionInput" maxlength="500" placeholder="写点备注，方便以后找到它…"></textarea></div>
+   <div class="modal-actions"><button type="button" class="btn btn-plain" id="cancelModal">取消</button><button type="submit" class="btn btn-primary" id="saveButton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>保存资源</button></div>
+   <div class="note">提示：内容保存在这台设备的当前浏览器中。清理浏览器数据或更换设备可能导致内容丢失。</div>
+  </form>
+ </div>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片预览"><button class="close-btn" id="closeLightbox" aria-label="关闭图片预览"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 6-12 12M6 6l12 12"/></svg></button><img id="lightboxImage" alt="图片大图预览"></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+  'use strict';
+  const DB_NAME = 'shiji-resource-library';
+  const STORE_NAME = 'resources';
+  let db = null;
+  let items = [];
+  let activeType = 'link';
+  let activeFilter = 'all';
+  let activeCollection = ''; 
+  let listView = false;
+  let selectedFiles = [];
+  let selectedLinkFiles = [];
+  let toastTimer = null;
+  const objectUrls = new Map();
+  const $ = (id) => document.getElementById(id);
+  const svg = {
+    link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2-2A5 5 0 0 0 12 3.93l-1.15 1.15"/><path d="M14 11a5 5 0 0 0-7.07 0l-2 2A5 5 0 0 0 12 20.07l1.15-1.15"/></svg>',
+    image: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>',
+    file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>',
+    trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6"/></svg>',
+    download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5"/><path d="M5 17v3h14v-3"/></svg>'
+  };
+
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      if (!('indexedDB' in window)) return reject(new Error('当前浏览器不支持本地存储'));
+      const request = indexedDB.open(DB_NAME, 1);
+      request.onupgradeneeded = () => {
+        const database = request.result;
+        if (!database.objectStoreNames.contains(STORE_NAME)) database.createObjectStore(STORE_NAME, { keyPath: 'id' });
+      };
+      request.onsuccess = () => { db = request.result; resolve(db); };
+      request.onerror = () => reject(request.error || new Error('无法打开本地数据库'));
+    });
+  }
+  function storeRequest(mode, method, value) {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, mode);
+      const store = tx.objectStore(STORE_NAME);
+      let request;
+      try { request = value === undefined ? store[method]() : store[method](value); }
+      catch (err) { reject(err); return; }
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error || new Error('操作失败'));
+    });
+  }
+  const getAll = () => storeRequest('readonly', 'getAll');
+  const putItem = (item) => storeRequest('readwrite', 'put', item);
+  const removeItem = (id) => storeRequest('readwrite', 'delete', id);
+  function uid() { return (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'r-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10); }
+  function escapeHTML(value) { return String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function formatDate(timestamp) { try { return new Intl.DateTimeFormat('zh-CN', {month:'short',day:'numeric'}).format(new Date(timestamp)); } catch (_) { return ''; } }
+  function formatSize(bytes) {
+    if (!Number.isFinite(bytes) || bytes < 0) return '';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(bytes < 10240 ? 1 : 0) + ' KB';
+    if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+  }
+  function getObjectUrl(item) {
+    if (!item.blob) return '';
+    if (!objectUrls.has(item.id)) objectUrls.set(item.id, URL.createObjectURL(item.blob));
+    return objectUrls.get(item.id);
+  }
+  function showToast(message) {
+    const node = $('toast'); node.textContent = message; node.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => node.classList.remove('show'), 2800);
+  }
+  function collectionNames() {
+    return [...new Set(items.filter(x => x.type === 'link' && x.collection).map(x => x.collection.trim()).filter(Boolean))].sort((a,b) => a.localeCompare(b, 'zh-CN'));
+  }
+  function refreshCollectionControls() {
+    const names = collectionNames();
+    const filter = $('collectionFilter');
+    const current = activeCollection;
+    filter.innerHTML = '<option value="">所有合集</option>' + names.map(name => `<option value="${escapeHTML(name)}">${escapeHTML(name)}</option>`).join('');
+    activeCollection = names.includes(current) ? current : '';
+    filter.value = activeCollection;
+    $('collectionOptions').innerHTML = names.map(name => `<option value="${escapeHTML(name)}"></option>`).join('');
+  }
+  async function assignCollection(id) {
+    const item = items.find(x => x.id === id);
+    if (!item || item.type !== 'link') return;
+    const suggested = item.collection || '';
+    const value = prompt('输入合集名称。留空则从合集移除：', suggested);
+    if (value === null) return;
+    const collection = value.trim().slice(0,60);
+    try {
+      await putItem({...item, collection});
+      await reloadItems();
+      showToast(collection ? `已归入「${collection}」合集` : '已从合集移除');
+    } catch (error) { showToast('更新合集失败，请重试'); }
+  }
+  function stats() {
+    refreshCollectionControls();
+    const links = items.filter(x => x.type === 'link').length;
+    const images = items.filter(x => x.type === 'image').length;
+    const files = items.filter(x => x.type === 'file').length;
+    $('totalCount').textContent = items.length;
+    $('linkCount').textContent = links;
+    $('fileCount').textContent = images + files;
+    $('countAll').textContent = items.length;
+    $('countLink').textContent = links;
+    $('countImage').textContent = images;
+    $('countFile').textContent = files;
+  }
+  function cardHTML(item) {
+    const title = escapeHTML(item.title || item.filename || item.url || '未命名资源');
+    const desc = escapeHTML(item.description || '');
+    const collectionTag = item.type === 'link' && item.collection ? `<div class="collection-pill">▦ ${escapeHTML(item.collection)}</div>` : '';
+    const collectionButton = item.type === 'link' ? `<button class="collection-action" type="button" data-collection-id="${escapeHTML(item.id)}">${item.collection ? '更改合集' : '＋ 放入合集'}</button>` : '';
+    const date = formatDate(item.createdAt);
+    const kind = item.type === 'link' ? '链接' : item.type === 'image' ? '图片' : '文件';
+    let preview = '';
+    let footer = '';
+    if (item.type === 'image') {
+      const url = getObjectUrl(item);
+      preview = `<div class="preview"><img src="${escapeHTML(url)}" alt="${title}" data-preview-id="${escapeHTML(item.id)}" loading="lazy"><span class="preview-badge">IMAGE</span><div class="card-menu"><button class="icon-btn delete-btn" data-delete-id="${escapeHTML(item.id)}" aria-label="删除${title}" title="删除资源">${svg.trash}</button></div></div>`;
+      footer = `<div class="file-meta">${svg.image}<span>${escapeHTML(item.filename || '图片')}</span><span>·</span><span>${formatSize(item.size)}</span></div>`;
+    } else if (item.type === 'file') {
+      preview = `<div class="preview"><div class="preview-placeholder"><div class="file-symbol">${svg.file}</div></div><span class="preview-badge">FILE</span><div class="card-menu"><button class="icon-btn delete-btn" data-delete-id="${escapeHTML(item.id)}" aria-label="删除${title}" title="删除资源">${svg.trash}</button></div></div>`;
+      footer = `<div class="file-meta">${svg.file}<span>${escapeHTML(item.filename || '文件')}</span><span>·</span><span>${formatSize(item.size)}</span><a class="download-link" href="${escapeHTML(getObjectUrl(item))}" download="${escapeHTML(item.filename || item.title || 'download')}">${svg.download} 下载</a></div>`;
+    } else {
+      let hostname = '';
+      try { hostname = new URL(item.url).hostname.replace(/^www\./, ''); } catch (_) { hostname = item.url || ''; }
+      const firstLetter = escapeHTML((hostname || '↗').slice(0,1).toUpperCase());
+      preview = `<div class="preview"><div class="preview-placeholder"><div style="z-index:1;text-align:center;padding:15px"><div class="file-symbol" style="width:58px;height:58px;border-radius:18px">${svg.link}</div><div style="font-size:12px;font-weight:800;color:#5d765f;margin-top:12px">LINK SAVED</div></div></div><span class="preview-badge">LINK</span><div class="card-menu"><button class="icon-btn delete-btn" data-delete-id="${escapeHTML(item.id)}" aria-label="删除${title}" title="删除资源">${svg.trash}</button></div></div>`;
+      footer = `<div class="url-line"><span class="favicon">${firstLetter}</span><span class="url-text" title="${escapeHTML(item.url)}">${escapeHTML(hostname)}</span><a class="open-link" href="${escapeHTML(item.url)}" target="_blank" rel="noopener noreferrer">打开 ↗</a></div>`;
+    }
+    const typeIcon = svg[item.type] || svg.file;
+    return `<article class="card" data-id="${escapeHTML(item.id)}">${preview}<div class="card-body"><div class="type-line"><span class="type-tag">${typeIcon}${kind}</span><span class="date">${date}</span></div><h3 class="card-title">${title}</h3>${collectionTag}<p class="card-desc">${desc}</p>${footer}${collectionButton}</div></article>`;
+  }
+  function render() {
+    stats();
+    const query = $('searchInput').value.trim().toLowerCase();
+    const sort = $('sortSelect').value;
+    let visible = items.filter(item => {
+      const matchesType = activeFilter === 'all' || item.type === activeFilter;
+      const matchesCollection = !activeCollection || (item.type === 'link' && item.collection === activeCollection);
+      const searchable = [item.title, item.description, item.url, item.filename, item.collection].join(' ').toLowerCase();
+      return matchesType && matchesCollection && (!query || searchable.includes(query));
+    });
+    visible.sort((a,b) => sort === 'old' ? a.createdAt-b.createdAt : sort === 'az' ? (a.title || a.filename || a.url || '').localeCompare(b.title || b.filename || b.url || '', 'zh-CN') : b.createdAt-a.createdAt);
+    $('resultTitle').textContent = activeCollection ? `合集：${activeCollection}（${visible.length}）` : query ? `搜索结果（${visible.length}）` : ({all:'所有资源',link:'网址链接',image:'图片收藏',file:'文件收藏'}[activeFilter]);
+    $('resultNote').textContent = query ? `包含“${query}”的内容` : visible.length ? `当前显示 ${visible.length} 项，收集灵感，也收集效率。` : '这里还空着，放进第一份收藏吧。';
+    const grid = $('resourceGrid');
+    grid.classList.toggle('list-view', listView);
+    if (!visible.length) {
+      const isSearch = !!query;
+      const heading = isSearch ? '没有找到相关内容' : (items.length === 0 ? '先收藏第一份资源吧' : '这个分类还空着');
+      const message = isSearch ? '换个关键词试试，或者检查一下网址和文件名。' : '可以添加网址链接、图片或文件。你的灵感收纳盒，从这里开始。';
+      grid.innerHTML = `<div class="empty"><div class="empty-icon">${isSearch ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>' : svg.link}</div><h3>${heading}</h3><p>${message}</p>${isSearch ? '' : '<button class="btn btn-primary" id="emptyAdd"><span style="font-size:18px;line-height:12px">＋</span>添加第一项</button>'}</div>`;
+      const emptyAdd = $('emptyAdd'); if (emptyAdd) emptyAdd.addEventListener('click', openModal);
+      return;
+    }
+    grid.innerHTML = visible.map(cardHTML).join('');
+    grid.querySelectorAll('[data-delete-id]').forEach(button => button.addEventListener('click', () => deleteResource(button.dataset.deleteId)));
+    grid.querySelectorAll('[data-preview-id]').forEach(image => image.addEventListener('click', () => openLightbox(image.dataset.previewId)));
+    grid.querySelectorAll('[data-collection-id]').forEach(button => button.addEventListener('click', () => assignCollection(button.dataset.collectionId)));
+  }
+  function chooseType(type) {
+    activeType = type;
+    document.querySelectorAll('.type-choice').forEach(btn => btn.classList.toggle('active', btn.dataset.type === type));
+    const isLink = type === 'link';
+    $('linkFields').classList.toggle('hidden', !isLink);
+    $('uploadFields').classList.toggle('hidden', isLink);
+    $('urlInput').required = isLink;
+    $('fileInput').required = false; // 通过 selectedFiles 数组校验，避免清空 input value 后触发浏览器原生拦截
+    $('fileInput').accept = type === 'image' ? 'image/*' : '';
+    $('uploadLabel').textContent = type === 'image' ? '选择图片 *' : '选择文件 *';
+    $('uploadHint').textContent = type === 'image' ? '支持常见图片格式，可一次选择多张' : '可一次选择多个文件，保存后可以下载';
+    $('fileInput').value = '';
+    selectedFiles = [];
+    $('selectedFiles').textContent = '';
+  }
+  function openModal() {
+    $('addOverlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+    chooseType('link');
+    $('addForm').reset();
+    $('selectedFiles').textContent = '';
+    selectedLinkFiles = [];
+    $('linkAttachmentInput').value = '';
+    $('linkAttachmentPreview').textContent = '';
+    setTimeout(() => $('urlInput').focus({preventScroll:true}), 60);
+  }
+  function closeModal() { $('addOverlay').classList.remove('show'); document.body.style.overflow = ''; }
+  function normalizeUrl(value) {
+    let text = value.trim();
+    if (!/^https?:\/\//i.test(text)) text = 'https://' + text;
+    let url;
+    try { url = new URL(text); } catch (_) { throw new Error('请输入有效的网址'); }
+    if (!['http:', 'https:'].includes(url.protocol)) throw new Error('网址必须以 http:// 或 https:// 开头');
+    return url.href;
+  }
+  function setFiles(files) {
+    const array = Array.from(files || []);
+    if (activeType === 'image') {
+      const bad = array.filter(file => !file.type.startsWith('image/'));
+      selectedFiles = array.filter(file => file.type.startsWith('image/'));
+      if (bad.length) showToast('已跳过非图片文件');
+    } else selectedFiles = array;
+    $('fileInput').value = '';
+    $('selectedFiles').textContent = selectedFiles.length ? `已选 ${selectedFiles.length} 个：\n` + selectedFiles.map(f => `• ${f.name}（${formatSize(f.size)}）`).join('\n') : '';
+  }
+  function setLinkFiles(files) {
+    selectedLinkFiles = Array.from(files || []);
+    const preview = $('linkAttachmentPreview');
+    preview.innerHTML = selectedLinkFiles.map(file => `<span class="attach-chip">${file.type.startsWith('image/') ? '🖼️' : '📎'} ${escapeHTML(file.name)} · ${formatSize(file.size)}</span>`).join('');
+  }
+  async function saveResource(event) {
+    event.preventDefault();
+    const description = $('descriptionInput').value.trim();
+    const button = $('saveButton');
+    button.disabled = true; button.textContent = '保存中…';
+    try {
+      if (activeType === 'link') {
+        const url = normalizeUrl($('urlInput').value);
+        let title = $('linkTitle').value.trim();
+        if (!title) { try { title = new URL(url).hostname.replace(/^www\./, ''); } catch (_) { title = url; } }
+        const linkId = uid();
+        const collection = $('collectionInput').value.trim().slice(0,60);
+        await putItem({id:linkId,type:'link',title,description,url,collection,createdAt:Date.now()});
+        let attachmentCount = 0;
+        for (const file of selectedLinkFiles) {
+          const type = file.type.startsWith('image/') ? 'image' : 'file';
+          await putItem({id:uid(),type,title:file.name,description:`关联链接：${title}\n${url}${description ? '\n备注：'+description : ''}`,filename:file.name,mime:file.type || 'application/octet-stream',size:file.size,blob:file,createdAt:Date.now()+(++attachmentCount)});
+        }
+        await reloadItems(); closeModal(); showToast(attachmentCount ? `链接已保存，并添加 ${attachmentCount} 个附件` : '链接已收入拾集');
+      } else {
+        if (!selectedFiles.length) throw new Error('请先选择' + (activeType === 'image' ? '图片' : '文件'));
+        let savedCount = 0;
+        for (const file of selectedFiles) {
+          if (activeType === 'image' && !file.type.startsWith('image/')) continue;
+          await putItem({id:uid(),type:activeType,title:file.name,description,filename:file.name,mime:file.type || 'application/octet-stream',size:file.size,blob:file,createdAt:Date.now()+savedCount});
+          savedCount++;
+        }
+        await reloadItems(); closeModal(); showToast(`已保存 ${savedCount} 个${activeType === 'image' ? '图片' : '文件'}`);
+      }
+    } catch (error) {
+      console.error(error);
+      const message = error && error.name === 'QuotaExceededError' ? '浏览器可用空间不足，请删掉部分大文件后重试' : (error.message || '保存失败，请重试');
+      showToast(message);
+    } finally {
+      button.disabled = false;
+      button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>保存资源';
+    }
+  }
+  async function reloadItems() {
+    items = await getAll();
+    items.sort((a,b) => b.createdAt - a.createdAt);
+    render();
+  }
+  async function deleteResource(id) {
+    const item = items.find(x => x.id === id);
+    if (!item || !confirm(`确定删除「${item.title || item.filename || item.url}」吗？此操作无法撤销。`)) return;
+    try {
+      await removeItem(id);
+      const url = objectUrls.get(id); if (url) { URL.revokeObjectURL(url); objectUrls.delete(id); }
+      await reloadItems(); showToast('已删除这项资源');
+    } catch (error) { showToast('删除失败，请重试'); }
+  }
+  function openLightbox(id) {
+    const item = items.find(x => x.id === id); if (!item || !item.blob) return;
+    $('lightboxImage').src = getObjectUrl(item);
+    $('lightboxImage').alt = item.title || item.filename || '图片预览';
+    $('lightbox').classList.add('show');
+  }
+  function closeLightbox() { $('lightbox').classList.remove('show'); $('lightboxImage').src = ''; }
+  function showHelp() {
+    alert('使用说明\n\n1. 点击「添加资源」，可添加网址链接，并在链接表单中附加图片或文件；也可单独保存图片和文件。\n2. 添加链接时可填写「放进合集」；已保存的链接也可点击「放入合集」或「更改合集」。相同名称会自动归为同一合集。\n3. 顶部「所有合集」可筛选某个合集，搜索也会匹配合集名称。\n4. 可通过搜索框查找标题、网址、备注和文件名；图片可放大预览，文件可以下载，链接会在新标签页打开。\n5. 当前版本使用浏览器本地数据库保存内容，不会自动上传或同步到其他设备。若要让其他人访问同一个共享资源库，需要部署服务器和后端存储。');
+  }
+  document.querySelectorAll('.tab[data-filter]').forEach(btn => btn.addEventListener('click', () => {
+    activeFilter = btn.dataset.filter;
+    document.querySelectorAll('.tab[data-filter]').forEach(b => { b.classList.toggle('active', b === btn); b.setAttribute('aria-selected', String(b === btn)); });
+    render();
+  }));
+  document.querySelectorAll('.type-choice').forEach(btn => btn.addEventListener('click', () => chooseType(btn.dataset.type)));
+  $('openAddTop').addEventListener('click', openModal);
+  $('closeModal').addEventListener('click', closeModal);
+  $('cancelModal').addEventListener('click', closeModal);
+  $('addOverlay').addEventListener('click', event => { if (event.target === $('addOverlay')) closeModal(); });
+  $('addForm').addEventListener('submit', saveResource);
+  $('fileInput').addEventListener('change', event => setFiles(event.target.files));
+  $('linkAttachmentInput').addEventListener('change', event => setLinkFiles(event.target.files));
+  $('dropzone').addEventListener('dragover', event => { event.preventDefault(); $('dropzone').classList.add('dragover'); });
+  $('dropzone').addEventListener('dragleave', () => $('dropzone').classList.remove('dragover'));
+  $('dropzone').addEventListener('drop', event => { event.preventDefault(); $('dropzone').classList.remove('dragover'); if (event.dataTransfer && event.dataTransfer.files) setFiles(event.dataTransfer.files); });
+  $('collectionFilter').addEventListener('change', () => { activeCollection = $('collectionFilter').value; render(); });
+  $('searchInput').addEventListener('input', render);
+  $('sortSelect').addEventListener('change', render);
+  $('gridMode').addEventListener('click', () => { listView = false; $('gridMode').classList.add('active'); $('listMode').classList.remove('active'); render(); });
+  $('listMode').addEventListener('click', () => { listView = true; $('listMode').classList.add('active'); $('gridMode').classList.remove('active'); render(); });
+  $('helpButton').addEventListener('click', showHelp);
+  $('closeLightbox').addEventListener('click', closeLightbox);
+  $('lightbox').addEventListener('click', event => { if (event.target === $('lightbox')) closeLightbox(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeModal(); closeLightbox(); } });
+  $('year').textContent = new Date().getFullYear();
+  openDB().then(reloadItems).catch(error => {
+    console.error(error);
+    $('resourceGrid').innerHTML = '<div class="empty"><div class="empty-icon">!</div><h3>无法打开本地资源库</h3><p>请使用较新的 Safari、Chrome 或 Edge 浏览器打开此网页。如果你直接在某些文件预览器里打开，请尝试在浏览器中打开。</p></div>';
+    showToast('本地存储初始化失败，请尝试使用浏览器打开');
+  });
+})();
+</script>
+</body>
+</html>
